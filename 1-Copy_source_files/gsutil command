@@ -1,0 +1,21 @@
+gsutil cp gs://fd-io-exc-demo-n-in/iowa_liquor_sales/stores-* gs://fd-io-exc-demo-n-in/input_iowa_liquor_sales/
+
+
+gsutil cp gs://fd-io-exc-demo-n-in/iowa_liquor_sales/products-* gs://fd-io-exc-demo-n-in/input_iowa_liquor_sales/
+
+gsutil cp gs://fd-io-exc-demo-n-in/iowa_liquor_sales/sales_* gs://fd-io-exc-demo-n-in/input_iowa_liquor_sales/
+
+
+--One file
+gsutil cp gs://fd-io-exc-demo-n-in/iowa_liquor_sales/sales_by_date/sales_20121012.csv	 gs://fd-io-exc-demo-n-in/input_iowa_liquor_sales/
+
+--2020
+gsutil cp gs://fd-io-exc-demo-n-in/iowa_liquor_sales/sales_by_date/sales_2020* gs://fd-io-exc-demo-n-in/input_iowa_liquor_sales/
+
+--All file
+gsutil cp gs://fd-io-exc-demo-n-in/iowa_liquor_sales/sales_by_date/sales_*	 gs://fd-io-exc-demo-n-in/input_iowa_liquor_sales/
+
+--Workflow
+gsutil cp gs://fd-io-exc-demo-n-in/iowa_liquor_sales/stores-20200414-123837.csv gs://fd-io-exc-demo-n-in/input_iowa_liquor_sales/
+gsutil cp gs://fd-io-exc-demo-n-in/iowa_liquor_sales/products-20200414-125705.csv	 gs://fd-io-exc-demo-n-in/input_iowa_liquor_sales/
+gsutil cp gs://fd-io-exc-demo-n-in/iowa_liquor_sales/sales_20200327-20200330.csv	 gs://fd-io-exc-demo-n-in/input_iowa_liquor_sales/
