@@ -19,7 +19,7 @@
 		{
 			"task_type": "sql",
 			"id": "iowa_liquor_agg_store",
-			"short_description": "Aggregate Data for clusturing  ",
+			"short_description": "Aggregate Data for clustering  ",
 			"table_name": "iowa_liquor_agg_store",
 			"sql_file": "iowa_liquor_agg_store.sql"
 		},
