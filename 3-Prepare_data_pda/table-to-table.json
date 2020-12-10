@@ -7,6 +7,7 @@
 	"environment": "DEV",
 	"activated": true,
 	"archived": false,
+	"direct_execution": true,
 	"start_date": "2019, 1, 23",
 	"catchup": false,
 	"schedule_interval": "None",
