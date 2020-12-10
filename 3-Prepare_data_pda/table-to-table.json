@@ -55,7 +55,8 @@
 			"id": "sales_tmp0_load_pda",
 			"short_description": "Load PDA Sales Temporary 0 Table",
 			"table_name": "sales_tmp0",
-			"sql_file": "sales_tmp0.sql"
+			"sql_file": "sales_tmp0.sql",
+			"temporary_table": true
 		},
 		{
 			"id": "create_sales_details_table",
