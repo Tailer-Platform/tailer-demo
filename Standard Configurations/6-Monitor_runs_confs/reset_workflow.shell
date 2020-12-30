@@ -1,0 +1,11 @@
+TAILER_API_JWT=`python3 google-jwt-generator.py your-credentials.json` \
+&& curl --request POST \
+--http2 \
+--header "content-type:application/json" \
+--header "Authorization: Bearer ${TAILER_API_JWT}" \
+--data '{ "action": "reset_workflow_status", 
+          "account": "000099", 
+          "environment": "DEV", 
+          "configuration_type": "workflow",
+          "configuration_id": "000099-iowa-liquor-load-pda"}' \
+"https://tailer-api-nqonovswsq-ew.a.run.app/v1/workflow/status"

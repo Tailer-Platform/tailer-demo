@@ -1,0 +1,43 @@
+{
+	"version": 2,
+	"configuration_type": "storage-to-storage",
+	"configuration_id": "{{FD_ACCOUNT}}-jarvis-demo-iowa-liquor-storage-to-storage",
+	"environment": "{{FD_ENV}}",
+	"account": "{{FD_ACCOUNT}}",
+	"activated": true,
+	"archived": false,
+	"filename_templates": [
+		{
+			"filename_template": "stores-{{FD_DATE}}-{{FD_TIME}}.csv",
+			"file_description": "Stores repository. The store listing is the file could evolve over time"
+		},
+		{
+			"filename_template": "products-{{FD_DATE}}-{{FD_TIME}}.csv",
+			"file_description": "Products repository. The product listing in the file could evolve over time"
+		},
+		{
+			"filename_template": "sales_{{FD_BLOB_8}}-{{FD_DATE}}.csv",
+			"file_description": "Daily Sales. There are many days in each files. And some days are repeated in different files"
+		},
+		{
+			"filename_template": "sales_{{FD_DATE}}.csv",
+			"file_description": "Daily Sales. There are many days in each files. And some days are repeated in different files"
+		}
+	],
+	"source": {
+		"type": "gcs",
+		"gcp_project_id": "{{gcp_project_id_exc}}",
+		"gcs_source_bucket": "{{gcs_source_bucket_n_in}}",
+		"gcs_source_prefix": "input_iowa_liquor_sales",
+		"gcs_archive_prefix": "archive_iowa_liquor_sales",
+		"gcp_credentials_secret": "{{gcp_credentials_secret_source_n_in}}"
+	},
+	"destinations": [
+		{
+			"type": "gcs",
+			"gcs_destination_bucket": "{{gcs_mirror_bucket_n_in}}",
+			"gcs_destination_prefix": "input_iowa_liquor_sales",
+			"gcp_credentials_secret": "{{gcp_credentials_secret_mirror_n_in}}"
+		}
+	]
+}

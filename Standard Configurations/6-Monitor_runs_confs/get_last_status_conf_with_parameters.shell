@@ -1,0 +1,46 @@
+TAILER_API_JWT=`python3 google-jwt-generator.py your-credentials.json` \
+&& curl --request POST \
+--http2 \
+--header "content-type:application/json" \
+--header "Authorization: Bearer ${TAILER_API_JWT}" \
+--data '{ "action": "get_last_status",
+          "account": "000099",
+          "environment": "DEV",
+          "configuration_type": "storage-to-storage",
+          "configuration_id": "000099-jarvis-demo-iowa-liquor-storage-to-storage",
+          "start_execution_date": "2020/12/09",
+          "status": "SUCCESS",
+          "limit": 2}' \
+"https://tailer-api-nqonovswsq-ew.a.run.app/v1/dag/status"
+
+
+TAILER_API_JWT=`python3 google-jwt-generator.py your-credentials.json` \
+&& curl --request POST \
+--http2 \
+--header "content-type:application/json" \
+--header "Authorization: Bearer ${TAILER_API_JWT}" \
+--data '{ "action": "get_last_status",
+          "account": "000099",
+          "environment": "DEV",
+          "configuration_type": "storage-to-tables",
+          "configuration_id": "000099_load_source_files_into_bigquery_psa",
+          "start_execution_date": "2020/12/09",
+          "status": "SUCCESS",
+          "limit": 2}' \
+"https://tailer-api-nqonovswsq-ew.a.run.app/v1/dag/status"
+
+
+TAILER_API_JWT=`python3 google-jwt-generator.py your-credentials.json` \
+&& curl --request POST \
+--http2 \
+--header "content-type:application/json" \
+--header "Authorization: Bearer ${TAILER_API_JWT}" \
+--data '{ "action": "get_last_status",
+          "account": "000099",
+          "environment": "DEV",
+          "configuration_type": "table-to-storage",
+          "configuration_id": "000099_iowa_liquor_export_cluster_stores",
+          "start_execution_date": "2020/12/09",
+          "status": "SUCCESS",
+          "limit": 2}' \
+"https://tailer-api-nqonovswsq-ew.a.run.app/v1/dag/status"

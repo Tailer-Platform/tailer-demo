@@ -1,0 +1,77 @@
+{
+	"configuration_type": "table-to-table",
+	"configuration_id": "{% account %}_iowa_liquor_prepare_pda",
+	"short_description": "Prepare PDA for Iowa Liquor Jarvis Demo",
+	"doc_md": "{% account %}_iowa_liquor_prepare_pda.md",
+	"environment": "{% env %}",
+	"account": "{% account %}",
+	"activated": true,
+	"archived": false,
+	"direct_execution": true,
+	"start_date": "2019, 1, 23",
+	"catchup": false,
+	"schedule_interval": "None",
+	"max_active_runs": 1,
+	"task_concurrency": 3,
+	"default_gcp_project_id": "{% gcp_project_id_dlk %}",
+	"default_bq_dataset": "dlk_demo_iowa_liquor_pda",
+	"default_write_disposition": "WRITE_TRUNCATE",
+	"task_dependencies": [
+		"[create_stores_table,create_products_table] >> sales_tmp0_load_pda >> [stores_load_pda,products_load_pda,create_sales_details_table] >> sales_details_load_pda"
+	],
+	"workflow": [
+		{
+			"id": "create_stores_table",
+			"short_description": "Create {% gcp_project_id_dlk %}.dlk_demo_iowa_liquor_pda.stores table",
+			"task_type": "create_gbq_table",
+			"bq_table": "stores",
+			"force_delete": true,
+			"ddl_file": "create_stores_table.json"
+		},
+		{
+			"id": "create_products_table",
+			"short_description": "Create {% gcp_project_id_dlk %}.dlk_demo_iowa_liquor_pda.products table",
+			"task_type": "create_gbq_table",
+			"bq_table": "products",
+			"force_delete": true,
+			"ddl_file": "create_products_table.json"
+		},
+		{
+			"task_type": "sql",
+			"id": "stores_load_pda",
+			"short_description": "Load PDA Store Repository",
+			"table_name": "stores",
+			"sql_file": "stores_load_pda.sql"
+		},
+		{
+			"task_type": "sql",
+			"id": "products_load_pda",
+			"short_description": "Load PDA Product Repository",
+			"table_name": "products",
+			"sql_file": "products_load_pda.sql"
+		},
+		{
+			"task_type": "sql",
+			"id": "sales_tmp0_load_pda",
+			"short_description": "Load PDA Sales Temporary 0 Table",
+			"table_name": "sales_tmp0",
+			"sql_file": "sales_tmp0.sql",
+			"temporary_table": true
+		},
+		{
+			"id": "create_sales_details_table",
+			"short_description": "Create {% gcp_project_id_dlk %}.dlk_demo_iowa_liquor_pda.sales_details table",
+			"task_type": "create_gbq_table",
+			"bq_table": "sales_details",
+			"force_delete": true,
+			"ddl_file": "create_sales_details_table.json"
+		},
+		{
+			"task_type": "sql",
+			"id": "sales_details_load_pda",
+			"short_description": "Load PDA Final iowa liquor sales details table",
+			"table_name": "sales_details",
+			"sql_file": "sales_sales_details_load_pda.sql"
+		}
+	]
+}

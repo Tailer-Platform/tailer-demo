@@ -1,0 +1,43 @@
+{
+	"configuration_type": "table-to-table",
+	"configuration_id": "000099-build-iowa-liquor-model",
+	"short_description": "Build Iowa Liquor Cluster Jarvis Demo",
+	"account": "000099",
+	"environment": "DEV",
+	"activated": true,
+	"archived": false,
+	"direct_execution": true,
+	"start_date": "2019, 1, 23",
+	"catchup": false,
+	"schedule_interval": "None",
+	"max_active_runs": 1,
+	"task_concurrency": 3,
+	"default_gcp_project_id": "fd-io-jarvis-demo-dlk",
+	"default_bq_dataset": "dlk_demo_iowa_liquor_bda_cluster",
+	"default_write_disposition": "WRITE_TRUNCATE",
+	"task_dependencies": [
+		"iowa_liquor_create_model >> iowa_liquor_agg_store >> store_clustering"
+	],
+	"workflow": [
+		{
+			"task_type": "sql",
+			"id": "iowa_liquor_create_model",
+			"short_description": "Create the model for the cluster",
+			"sql_file": "create_model_clustering_store_iowa_liquor.sql"
+		},
+		{
+			"task_type": "sql",
+			"id": "iowa_liquor_agg_store",
+			"short_description": "Aggregate Data for clustering  ",
+			"table_name": "iowa_liquor_agg_store",
+			"sql_file": "iowa_liquor_agg_store.sql"
+		},
+		{
+			"task_type": "sql",
+			"id": "store_clustering",
+			"short_description": "Affect every stores to the good cluster",
+			"table_name": "store_clustering",
+			"sql_file": "store_clustering.sql"
+		}
+	]
+}

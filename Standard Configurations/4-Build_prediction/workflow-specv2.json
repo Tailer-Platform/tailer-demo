@@ -1,0 +1,24 @@
+{
+	"configuration_type": "workflow",
+	"configuration_id": "000099-iowa-liquor-execute-model",
+	"environment": "DEV",
+	"short_description": "Launch Iowa Liquor Jarvis Demo Execute Model with BQ",
+	"account": "000099",
+	"activated": true,
+	"archived": false,
+	//We can schedule the workflow with different options.
+	//////////////////////////////////////////////////////:
+
+	//schedule_mode : main, wait safe, force, reset, none
+	// main : it's the only way to trigger the workflow. The authorized_job_ids are not taken into account
+	// wait : The scheduler is a trigger as the others jobs. the schedule act as a flag raised at a certain time amoung the other jobs flags
+	// safe : The workflow is launch at a certain time even if all the none mandatory jobs' flags are not raised. The flags' status are not changed after launching the workflow. The workflow can be launched again when all the jobs' flags are raised
+	// force : The workflow is launch at a certain time even if all the none mandatory jobs' flags are not raised. The flags' status are reset after launching the workflow. The workflow can't be launched again even if all the jobs' flags are raised
+	// reset : All the jobs' status should be reset even if they are not all raised. The workflow is not launched q
+	// none : the workflow is not schedule at all. 
+	"schedule_mode": "safe",
+	"schedule_interval": "None",
+	"authorized_job_ids": ["gbq-to-gbq|000099_iowa_liquor_prepare_pda_DEV"],
+	"target_dag": "000099-build-iowa-liquor-model_DEV",
+	"extra_parameters": {}
+}

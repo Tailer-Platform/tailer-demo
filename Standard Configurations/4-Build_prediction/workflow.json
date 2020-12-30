@@ -1,0 +1,12 @@
+{
+	"configuration_type": "workflow",
+	"configuration_id": "000099-iowa-liquor-execute-model",
+	"environment": "DEV",
+	"short_description": "Launch Iowa Liquor Jarvis Demo Execute Model with BQ",
+	"account": "000099",
+	"activated": true,
+	"archived": false,
+	"authorized_job_ids": ["gbq-to-gbq|000099_iowa_liquor_prepare_pda_DEV"],
+	"target_dag": "000099-build-iowa-liquor-model_DEV",
+	"extra_parameters": {}
+}

@@ -1,10 +1,10 @@
 {
 	"configuration_type": "storage-to-storage",
-	"configuration_id": "000099-jarvis-demo-iowa-liquor-storage-to-storage",
-	"environment": "DEV",
-	"account": "000099",
+	"configuration_id": "{% account %}-jarvis-demo-iowa-liquor-storage-to-storage",
+	"environment": "{% env %}",
+	"account": "{% account %}",
 	"activated": true,
-	"archive": false,
+	"archived": false,
 	"filename_templates": [
 		{
 			"filename_template": "stores-{{FD_DATE}}-{{FD_TIME}}.csv",

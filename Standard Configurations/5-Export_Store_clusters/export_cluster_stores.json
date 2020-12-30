@@ -1,0 +1,23 @@
+{
+	"configuration_type": "table-to-storage",
+	"configuration_id": "000099_iowa_liquor_export_cluster_stores",
+	"environment": "DEV",
+	"account": "000099",
+	"activated": true,
+	"archive": false,
+
+	"gcp_project": "fd-io-jarvis-demo-dlk",
+	"sql_file": "iowa_liquor_export_cluster_stores.sql",
+
+	"copy_table": true,
+	"dest_gcp_project_id": "fd-io-jarvis-demo-dlk",
+	"dest_gbq_dataset": "dlk_demo_iowa_liquor_bda_cluster",
+	"dest_gbq_table": "export_iowa_liquor_export_cluster_stores",
+
+	"gcs_dest_bucket": "fd-io-exc-demo-n-out",
+	"gcs_dest_prefix": "output_store_clustering/",
+	"delete_dest_bucket_content": false,
+	"output_filename": "{{DATE}}_iowa_liquor_export_cluster_stores.csv",
+	"field_delimiter": "|",
+	"compression": "NONE"
+}
