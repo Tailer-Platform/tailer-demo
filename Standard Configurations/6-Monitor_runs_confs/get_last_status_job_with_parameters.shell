@@ -9,7 +9,7 @@ TAILER_API_JWT=`python3 google-jwt-generator.py your-credentials.json` \
           "configuration_type": "gbq-to-gbq",
           "configuration_id": "000099_iowa_liquor_prepare_pda_DEV",
           "job_id": "gbq-to-gbq|000099_iowa_liquor_prepare_pda_DEV",
-          "start_execution_date": "2020/12/09",
+          "execution_date": "2020-12-09",
           "status": "SUCCESS",
           "limit": 2}' \
 "https://tailer-api-nqonovswsq-ew.a.run.app/v1/dag/status"
@@ -26,7 +26,7 @@ TAILER_API_JWT=`python3 google-jwt-generator.py your-credentials.json` \
           "configuration_type": "table-to-storage",
           "configuration_id": "0000099_iowa_liquor_export_cluster_stores",
           "job_id": "table-to-storage|table-to-storage|000099_iowa_liquor_export_cluster_stores",
-          "start_execution_date": "2020/12/09",
+          "execution_date": "2020-12-09",
           "status": "SUCCESS",
           "limit": 2}' \
 "https://tailer-api-nqonovswsq-ew.a.run.app/v1/dag/status"
