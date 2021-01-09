@@ -6,9 +6,8 @@ TAILER_API_JWT=`python3 google-jwt-generator.py your-credentials.json` \
 --data '{ "action": "get_last_status",
           "account": "000099",
           "environment": "DEV",
-          "configuration_type": "gbq-to-gbq",
+          "configuration_type": "table-to-table",
           "configuration_id": "000099_iowa_liquor_prepare_pda_DEV",
-          "job_id": "gbq-to-gbq|000099_iowa_liquor_prepare_pda_DEV",
           "execution_date": "2020-12-09",
           "status": "SUCCESS",
           "limit": 2}' \

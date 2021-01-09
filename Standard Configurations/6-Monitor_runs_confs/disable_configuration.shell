@@ -8,6 +8,6 @@ TAILER_API_JWT=`python3 google-jwt-generator.py your-credentials.json` \
           "archived" : false,
           "account": "000099", 
           "environment": "DEV", 
-          "configuration_type": "gbq-to-gbq",
+          "configuration_type": "table-to-table",
           "configuration_id": "000099_Load_PDA_f_traffic_ma_DEV"}' \
 "https://tailer-api-nqonovswsq-ew.a.run.app/v1/configuration/status"
