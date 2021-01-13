@@ -6,6 +6,24 @@
 	"activated": true,
 	"archived": false,
 	"parameters": {
+		"test_integer": {
+			"value": 123456,
+			"type": "integer",
+			"resource": "value",
+			"description": "Some random value"
+		},
+		"test_float": {
+			"value": 123456.78910,
+			"type": "float",
+			"resource": "value",
+			"description": "Some random value"
+		},
+		"test_boolean": {
+			"value": true,
+			"type": "boolean",
+			"resource": "value",
+			"description": "Some random value"
+		},
 		"gcp_project_id_exc": {
 			"value": "fd-io-jarvis-demo-exc",
 			"type": "string",

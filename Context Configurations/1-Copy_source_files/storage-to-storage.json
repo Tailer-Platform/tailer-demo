@@ -1,11 +1,12 @@
 {
 	"version": 2,
 	"configuration_type": "storage-to-storage",
-	"configuration_id": "{{FD_ACCOUNT}}-jarvis-demo-iowa-liquor-storage-to-storage",
+	"configuration_id": "jarvis-demo-iowa-liquor-storage-to-storage-jultest",
 	"environment": "{{FD_ENV}}",
 	"account": "{{FD_ACCOUNT}}",
 	"activated": true,
 	"archived": false,
+	"test_attribute": "This a test attribute {{test_boolean}}  blah blah ....",
 	"filename_templates": [
 		{
 			"filename_template": "stores-{{FD_DATE}}-{{FD_TIME}}.csv",
