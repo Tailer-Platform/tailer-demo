@@ -1,8 +1,8 @@
 {
 	"configuration_type": "storage-to-storage",
-	"configuration_id": "{% account %}-jarvis-demo-iowa-liquor-storage-to-storage",
-	"environment": "{% env %}",
-	"account": "{% account %}",
+	"configuration_id": "000099-jarvis-demo-iowa-liquor-storage-to-storage",
+	"environment": "DEV",
+	"account": "000099",
 	"activated": true,
 	"archived": false,
 	"filename_templates": [
