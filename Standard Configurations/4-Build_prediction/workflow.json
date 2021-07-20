@@ -4,6 +4,7 @@
 	"environment": "DEV",
 	"short_description": "Launch Iowa Liquor Jarvis Demo Execute Model with BQ",
 	"account": "000099",
+	"gcp_project_id": "fd-io-jarvis-demo-dlk",
 	"activated": true,
 	"archived": false,
 	"authorized_job_ids": ["gbq-to-gbq|000099_iowa_liquor_prepare_pda_DEV"],

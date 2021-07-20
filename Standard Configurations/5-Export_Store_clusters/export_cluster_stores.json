@@ -6,7 +6,7 @@
 	"activated": true,
 	"archive": false,
 
-	"gcp_project": "fd-io-jarvis-demo-dlk",
+	"gcp_project_id": "fd-io-jarvis-demo-dlk",
 	"sql_file": "iowa_liquor_export_cluster_stores.sql",
 
 	"copy_table": true,

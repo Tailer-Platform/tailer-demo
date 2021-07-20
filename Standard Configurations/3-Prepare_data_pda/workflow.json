@@ -2,6 +2,7 @@
 	"configuration_type": "workflow",
 	"configuration_id": "000099-iowa-liquor-load-pda",
 	"environment": "DEV",
+	"gcp_project_id": "fd-io-jarvis-demo-dlk",
 	"short_description": "Launch Iowa Liquor Jarvis Demo Load PDA",
 	"account": "000099",
 	"activated": true,
