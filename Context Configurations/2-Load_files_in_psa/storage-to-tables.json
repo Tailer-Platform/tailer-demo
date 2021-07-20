@@ -13,7 +13,7 @@
 		"gcs_source_bucket": "{% gcs_mirror_bucket_n_in %}",
 		"gcs_source_prefix": "input_iowa_liquor_sales",
 		"gcs_archive_prefix": "archive_iowa_liquor_sales",
-		"gcp_credentials_secret": {% gcp_credentials_secret_mirror_n_in %}
+		"gcp_credentials_secret": "{% gcp_credentials_secret_mirror_n_in %}"
 	},
 	"destinations": [
 		{
@@ -26,7 +26,7 @@
 			"skip_leading_rows": 1,
 			"field_delimiter": ",",
 			"quote_character": "\"",
-			"gcp_credentials_secret": {% gcp_credentials_secret_bigquery_dlk %},
+			"gcp_credentials_secret": "{% gcp_credentials_secret_bigquery_dlk %}",
 			"tables": [
 				{
 					"table_name": "stores",
