@@ -1,0 +1,41 @@
+{
+    "configuration_type": "table-to-table",
+    "configuration_id": "000099_check_iowa_liquor_sales_details",
+    "short_description": "Load sales PDA table",
+    "doc_md": "000099_Load_PDA_sales_DQ_demo.md",
+    "start_date": "2020, 10, 5",
+    "schedule_interval": "None",
+    "activated": true,
+    "archive": false,
+    "default_gcp_project_id": "fd-io-jarvis-demo-dlk",
+    "default_bq_dataset": "dlk_demo_iowa_liquor_pda", 
+    "default_write_disposition": "WRITE_TRUNCATE",
+    "account": "000099",
+    "environment": "DEV",
+    "direct_execution": true,
+    "task_dependencies": [],
+    "workflow": [
+        {
+            "id": "data_quality_test",
+            "short_description": "Run data quality tests",
+            "sql_file": "check_iowa_liquor_sales_details.sql",
+            "doc_md": "check_iowa_liquor_sales_details.md"
+        }
+    ],
+    "monitoring": {
+      "impact": 2, 
+      "urgency": 2, 
+      "alert_enabled": true, 
+      "alert_environment": "DEV",
+      "alert_info": "Tests on Iowa liquor sales details failed", 
+      "alert": { 
+        "email" :  { 
+            "email_from": "no_reply@tailer.ai", 
+            "email_to": "me@fashiondata.io;you@fashiondata.io", 
+            "email_reply_to": "no_reply@tailer.ai", 
+            "email_subject": "Data Operation Alert : @configuration_id has just failed", 
+            "email_body_type": "html"
+          }
+        }
+    }
+}

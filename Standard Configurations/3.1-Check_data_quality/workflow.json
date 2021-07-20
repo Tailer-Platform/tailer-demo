@@ -1,8 +1,8 @@
 {
 	"configuration_type": "workflow",
-	"configuration_id": "000099-iowa-liquor-execute-model",
+	"configuration_id": "000099-iowa-liquor-load-pda-check",
 	"environment": "DEV",
-	"short_description": "Launch Iowa Liquor Jarvis Demo Execute Model with BQ",
+	"short_description": "Check Iowa Liquor Jarvis Demo PDA table",
 	"account": "000099",
 	"activated": true,
 	"archived": false,
