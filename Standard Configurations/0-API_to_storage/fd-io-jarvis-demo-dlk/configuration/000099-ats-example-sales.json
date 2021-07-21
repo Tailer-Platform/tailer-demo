@@ -1,0 +1,25 @@
+{
+    "configuration_type": "api-to-storage",
+    "configuration_id": "000099-ats-example-sales",
+    "environment": "DEV",
+    "account": "000099",
+    "activated": true,
+    "archived": false,
+    "short_description": "This API will receive SALES and store them to GCS blobs.",
+    "doc_md": "000099-ats-example-sales.md",
+    "source": {
+        "type": "pubsub",
+        "gcp_project_id": "fd-io-jarvis-demo-dlk",
+        "pubsub_topic_suffix": "example-sales",
+        "gcp_credentials": "sa_user_api_fd-io-jarvis-demo-dlk"
+    },  
+    "destinations": [
+      {
+          "type": "gcs",
+          "gcp_credentials_secret": "sa_gcs_",
+          "gcs_destination_bucket": "fd-io-demo-n-in",
+          "gcs_destination_prefix": "ats-repository/sales/input",
+          "gcs_filename_template": "sales.json"
+      }
+    ]
+  }
