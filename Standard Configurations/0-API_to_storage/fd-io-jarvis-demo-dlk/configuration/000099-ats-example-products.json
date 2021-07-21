@@ -9,8 +9,7 @@
   "doc_md": "000099-ats-example-products.md",
   "source": {
     "type": "pubsub",
-    "gcp_project_id": "fd-io-jarvis-demo-dlk",
-    "pubsub_topic_suffix": "example-products"
+    "gcp_project_id": "fd-io-jarvis-demo-dlk"
   },
   "destinations": [
     {
