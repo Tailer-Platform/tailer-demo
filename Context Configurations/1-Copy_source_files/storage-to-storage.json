@@ -1,9 +1,10 @@
 {
-	"version": 2,
+	"version": "2",
 	"configuration_type": "storage-to-storage",
-	"configuration_id": "jarvis-demo-iowa-liquor-storage-to-storage-jultest",
+	"configuration_id": "jarvis-demo-iowa-liquor-storage-to-storage-demo",
 	"environment": "{{FD_ENV}}",
 	"account": "{{FD_ACCOUNT}}",
+	"project_id": "fd-io-jarvis-demo-exc",
 	"activated": true,
 	"archived": false,
 	"test_attribute": "This a test attribute {{test_boolean}}  blah blah ....",
