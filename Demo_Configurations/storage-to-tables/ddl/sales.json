@@ -1,0 +1,49 @@
+{
+	"schema": [
+		{
+			"name": "invoice_and_item_number",
+			"type": "STRING",
+			"description": "Concatenated invoice and line number associated with the liquor order. This provides a unique identifier for the individual liquor products included in the store order."
+		},
+		{
+			"name": "date",
+			"type": "STRING",
+			"description": "Date of order"
+		},
+		{
+			"name": "store_number",
+			"type": "STRING",
+			"description": "Unique number assigned to the store who ordered the liquor."
+		},
+		{
+			"name": "item_number",
+			"type": "STRING",
+			"description": "Item number for the individual liquor product ordered."
+		},
+		{
+			"name": "state_bottle_retail",
+			"type": "STRING",
+			"description": "The amount the store paid for each bottle of liquor"
+		},
+		{
+			"name": "bottles_sold",
+			"type": "STRING",
+			"description": "The number of bottles of liquor ordered by the store"
+		},
+		{
+			"name": "sale_dollars",
+			"type": "STRING",
+			"description": "Total cost of liquor order (number of bottles multiplied by the state bottle retail)"
+		},
+		{
+			"name": "volume_sold_liters",
+			"type": "STRING",
+			"description": "Total volume of liquor ordered in liters. (i.e. (Bottle Volume (ml) x Bottles Sold)/1,000)"
+		},
+		{
+			"name": "volume_sold_gallons",
+			"type": "STRING",
+			"description": "Total volume of liquor ordered in gallons. (i.e. (Bottle Volume (ml) x Bottles Sold)/3785.411784)"
+		}
+	]
+}
