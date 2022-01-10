@@ -16,6 +16,11 @@
 			"description": "The vendor number of the company for the brand of liquor"
 		},
 		{
+			"name": "vendor_name",
+			"type": "STRING",
+			"description": "The vendor name of the company for the brand of liquor"
+		},
+		{
 			"name": "item_number",
 			"type": "STRING",
 			"description": "Item number for the individual liquor product"

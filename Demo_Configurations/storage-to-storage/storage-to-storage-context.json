@@ -1,0 +1,51 @@
+{
+	"$schema": "http://jsonschema.tailer.ai/schema/storage-to-storage",
+	"version": "2",
+
+	"configuration_type": "storage-to-storage",
+	"configuration_id": "{{FD_ACCOUNT}}-tailer-demo-storage-to-storage",
+	"short_description": "Copy Demo Inputs files from Exchange Bucket to Dlk Bucket",
+
+	"account": "{{FD_ACCOUNT}}",
+	"environment": "{{FD_ENV}}",
+
+	"activated": true,
+	"archived": false,
+
+	"max_active_runs": 5,
+
+	"filename_templates": [
+		{
+			"filename_template": "stores_{{FD_DATE}}_{{FD_BLOB_12}}.csv",
+			"file_description": "Stores repository. The store listing in the file could evolve over time"
+		},
+		{
+			"filename_template": "products_{{FD_DATE}}_{{FD_BLOB_12}}.csv",
+			"file_description": "Products repository. The product listing in the file could evolve over time"
+		},
+		{
+			"filename_template": "products_{{FD_DATE}}_{{FD_BLOB_12}}.csv.ddl.json",
+			"file_description": "Products Table DDL Schemas associated with each products .csv file"
+		},
+		{
+			"filename_template": "sales_{{FD_DATE}}_{{FD_BLOB_12}}.gz",
+			"file_description": "Daily Sales. There are many days in each files. And some days are repeated in different files"
+		}
+	],
+	"source": {
+		"type": "gcs",
+		"gcp_project_id": "{{exc_gcp_project_id}}",
+		"gcs_source_bucket": "{{exc_bucket_in_n}}",
+		"gcs_source_prefix": "{{exc_folder_in_n}}",
+		"gcs_archive_prefix": "{{exc_folder_archive_n}}",
+		"gcp_credentials_secret": "{{credentials_fd-io-exc-demo-n-in}}"
+	},
+	"destinations": [
+		{
+			"type": "gcs",
+			"gcs_destination_bucket": "{{dlk_bucket_in_n}}",
+			"gcs_destination_prefix": "{{dlk_folder_in_n}}",
+			"gcp_credentials_secret": "{{credentials_fd-io-dlk_demo-n-in}}"
+		}
+	]
+}

@@ -1,5 +1,6 @@
 {
-	"schema": [
+	"bq_table_description": "Iowa Liquor Products Repository",
+	"bq_table_schema": [
 		{
 			"name": "category",
 			"type": "STRING",
@@ -32,23 +33,19 @@
 		},
 		{
 			"name": "pack",
-			"type": "STRING",
+			"type": "INTEGER",
 			"description": "The number of bottles in a case for the liquor"
 		},
 		{
 			"name": "bottle_volume_ml",
-			"type": "STRING",
+			"type": "INTEGER",
 			"description": "Volume of each liquor bottle in milliliters"
 		},
 		{
 			"name": "state_bottle_cost",
-			"type": "STRING",
+			"type": "FLOAT",
 			"description": "The amount that Alcoholic Beverages Division paid for each bottle of liquor"
-		},
-		{
-			"name": "state_bottle_retail",
-			"type": "STRING",
-			"description": "The amount the store paid for each bottle of liquor"
 		}
-	]
+	],
+	"bq_table_clustering_fields": ["item_number"]
 }

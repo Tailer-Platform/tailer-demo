@@ -1,0 +1,63 @@
+{
+	"$schema": "http://jsonschema.tailer.ai/schema/storage-to-tables",
+	"version": "2",
+
+	"configuration_type": "storage-to-tables",
+	"configuration_id": "{{FD_ACCOUNT}}-tailer-demo-storage-to-tables",
+	"account": "{{FD_ACCOUNT}}",
+	"environment": "{{FD_ENV}}",
+
+	"activated": true,
+	"archived": false,
+
+	"short_description": "This Job load iowa liquor files  into the Demo PSA",
+	"doc_md": "load_source_files_into_bigquery_psa.md",
+
+	"max_active_runs": 5,
+
+	"source": {
+		"type": "gcs",
+		"gcp_project_id": "{{dlk_gcp_project_id}}",
+		"gcs_source_bucket": "{{dlk_bucket_in_n}}",
+		"gcs_source_prefix": "{{dlk_folder_in_n}}",
+		"gcs_archive_prefix": "{{dlk_folder_archive_n}}",
+		"gcp_credentials_secret": "{{credentials_fd-io-dlk_demo-n-in}}"
+	},
+	"destinations": [
+		{
+			"type": "bigquery",
+			"gcp_project_id": "{{dlk_gcp_project_id}}",
+			"gbq_dataset": "{{dlk_default_dataset_psa}}",
+			"source_format": "CSV",
+			"create_disposition": "CREATE_IF_NEEDED",
+			"write_disposition": "WRITE_TRUNCATE",
+			"skip_leading_rows": 1,
+			"field_delimiter": ";",
+			"quote_character": "\"",
+			"gcp_credentials_secret": "{{credentials_dlk_bq}}",
+			"tables": [
+				{
+					"table_name": "stores",
+					"short_description": "Stores repository",
+					"filename_template": "stores_{{FD_DATE}}_{{FD_BLOB_12}}.csv",
+					"ddl_file": "ddl/stores.json",
+					"doc_md": "ddl/stores.md"
+				},
+				{
+					"table_name": "sales",
+					"short_description": "Daily Iowa Liquor Sales",
+					"filename_template": "sales_{{FD_DATE}}_{{FD_BLOB_12}}.gz",
+					"ddl_file": "ddl/sales.json"
+				},
+				{
+					"table_name": "products",
+					"short_description": "Products repository",
+					"filename_template": "products_{{FD_DATE}}_{{FD_BLOB_12}}.csv",
+					"ddl_mode": "file_template",
+					"field_delimiter": "|",
+					"bq_load_job_max_bad_records": 10
+				}
+			]
+		}
+	]
+}

@@ -19,6 +19,7 @@ SELECT
     STRUCT( "category" as name, "STRING" as type, "Category code associated with the liquor" as description),
     STRUCT( "category_name" as name, "STRING" as type, "Category of the liquor" as description),
     STRUCT( "vendor_number" as name, "STRING" as type, "The vendor number of the company for the brand of liquor" as description),
+    STRUCT( "vendor_name" as name, "STRING" as type, "The vendor name of the company for the brand of liquor" as description),
     STRUCT( "item_number" as name, "STRING" as type, "Item number for the individual liquor product" as description),
     STRUCT( "item_description" as name, "STRING" as type, "Description of the individual liquor product" as description),
     STRUCT( "pack" as name, "STRING" as type, "The number of bottles in a case for the liquor" as description),
@@ -31,7 +32,7 @@ EXPORT DATA OPTIONS(
   format='CSV',
   overwrite=true,
   header=true,
-  field_delimiter=';') AS 
+  field_delimiter='|') AS 
 SELECT
   DISTINCT 
   category,
@@ -64,6 +65,7 @@ SELECT
     STRUCT( "category" as name, "STRING" as type, "Category code associated with the liquor" as description),
     STRUCT( "category_name" as name, "STRING" as type, "Category of the liquor" as description),
     STRUCT( "vendor_number" as name, "STRING" as type, "The vendor number of the company for the brand of liquor" as description),
+    STRUCT( "vendor_name" as name, "STRING" as type, "The vendor name of the company for the brand of liquor" as description),
     STRUCT( "item_number" as name, "STRING" as type, "Item number for the individual liquor product" as description),
     STRUCT( "item_description" as name, "STRING" as type, "Description of the individual liquor product" as description),
     STRUCT( "pack" as name, "STRING" as type, "The number of bottles in a case for the liquor" as description),
@@ -76,7 +78,7 @@ EXPORT DATA OPTIONS(
   format='CSV',
   overwrite=true,
   header=true,
-  field_delimiter=';') AS 
+  field_delimiter='|') AS 
 SELECT
   DISTINCT 
   category,

@@ -1,0 +1,46 @@
+{
+	"bq_table_description": "Iowa Liquor Stores Repository",
+	"bq_table_schema": [
+		{
+			"name": "store_number",
+			"type": "STRING",
+			"description": "Unique number assigned to the store who ordered the liquor."
+		},
+		{
+			"name": "store_name",
+			"type": "STRING",
+			"description": "Name of store who ordered the liquor."
+		},
+		{
+			"name": "address",
+			"type": "STRING",
+			"description": "Address of store who ordered the liquor."
+		},
+		{
+			"name": "city",
+			"type": "STRING",
+			"description": "City where the store who ordered the liquor is located"
+		},
+		{
+			"name": "zip_code",
+			"type": "STRING",
+			"description": "Zip code where the store who ordered the liquor is located"
+		},
+		{
+			"name": "store_location",
+			"type": "STRING",
+			"description": "Location of store who ordered the liquor. The Address, City, State and Zip Code are geocoded to provide geographic coordinates. Accuracy of geocoding is dependent on how well the address is interpreted and the completeness of the reference data used."
+		},
+		{
+			"name": "county_number",
+			"type": "STRING",
+			"description": "Iowa county number for the county where store who ordered the liquor is located"
+		},
+		{
+			"name": "county",
+			"type": "STRING",
+			"description": "County where the store who ordered the liquor is located"
+		}
+	],
+	"bq_table_clustering_fields": ["store_number"]
+}

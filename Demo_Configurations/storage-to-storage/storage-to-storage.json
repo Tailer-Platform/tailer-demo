@@ -1,10 +1,16 @@
 {
+	"$schema": "http://jsonschema.tailer.ai/schema/storage-to-storage",
+
 	"configuration_type": "storage-to-storage",
 	"configuration_id": "000099-tailer-demo-storage-to-storage",
 	"environment": "DEV",
 	"account": "000099",
+
 	"activated": true,
 	"archived": false,
+
+	"max_active_runs": 5,
+
 	"filename_templates": [
 		{
 			"filename_template": "stores_{{FD_DATE}}_{{FD_BLOB_12}}.csv",

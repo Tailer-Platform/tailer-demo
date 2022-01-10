@@ -3,8 +3,8 @@ DECLARE min_date DATE DEFAULT CURRENT_DATE();
 DECLARE gs_url_root STRING DEFAULT "gs://fd-io-exc-demo-n-in/input_demo_tailer/stores_";
 DECLARE gs_url STRING;
 
-SET start_date = "2021-12-31";
-SET min_date = "2021-10-31";
+SET start_date = "2021-08-31";
+SET min_date = "2019-01-01";
 SET gs_url=CONCAT(gs_url_root,CAST(FORMAT_DATE("%Y%m%d", start_date) AS STRING),"_*.csv");
 
 EXPORT DATA OPTIONS(
