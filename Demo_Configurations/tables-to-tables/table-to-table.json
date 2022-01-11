@@ -1,6 +1,6 @@
 {
 	"$schema": "http://jsonschema.tailer.ai/schema/table-to-table",
-	"version": 2,
+	"version": "2",
 
 	"configuration_type": "table-to-table",
 	"configuration_id": "iowa_liquor_prepare_pda",
@@ -51,7 +51,7 @@
 			"task_type": "create_gbq_table",
 			"bq_table": "sales_details",
 			"force_delete": true,
-			"ddl_file": "ddl/sales_details.json"
+			"ddl_file": "ddl/sales_details.ddl.json"
 		},
 		{
 			"task_type": "sql",
@@ -73,14 +73,21 @@
 			"id": "products_load_pda",
 			"short_description": "Load PDA Product Repository",
 			"table_name": "products",
-			"sql_file": "products_load_pda.sql"
+			"sql_file": "sql/products_load_pda.sql"
 		},
 		{
 			"task_type": "sql",
 			"id": "sales_details_load_pda",
 			"short_description": "Load PDA Final iowa liquor sales details table",
 			"table_name": "sales_details",
-			"sql_file": "sales_sales_details_load_pda.sql"
+			"sql_file": "sql/sales_sales_details_load_pda.sql"
+		},
+		{
+			"id": "expects_sales_details",
+			"task_type": "expectation",
+			"short_description": "Check for data integrity (pk, count, dates,...).",
+			"sql_file": "sql/expects_sales_details.sql",
+			"task_criticality": "warning"
 		}
 	]
 }

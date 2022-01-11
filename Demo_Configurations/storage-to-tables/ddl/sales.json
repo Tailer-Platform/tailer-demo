@@ -21,6 +21,21 @@
 			"description": "Item number for the individual liquor product ordered."
 		},
 		{
+			"name": "pack",
+			"type": "STRING",
+			"description": "The number of bottles in a case for the liquor"
+		},
+		{
+			"name": "bottle_volume_ml",
+			"type": "STRING",
+			"description": "Volume of each liquor bottle in milliliters"
+		},
+		{
+			"name": "state_bottle_cost",
+			"type": "STRING",
+			"description": "The amount that Alcoholic Beverages Division paid for each bottle of liquor"
+		},
+		{
 			"name": "state_bottle_retail",
 			"type": "STRING",
 			"description": "The amount the store paid for each bottle of liquor"

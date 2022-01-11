@@ -1,0 +1,1 @@
+DROP SCHEMA IF EXISTS fd-io-jarvis-demo-dlk.dlk_demo_iowa_liquor_psa;

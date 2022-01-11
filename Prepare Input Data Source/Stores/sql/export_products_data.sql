@@ -3,8 +3,8 @@ DECLARE min_date DATE DEFAULT CURRENT_DATE();
 DECLARE gs_url_root STRING DEFAULT "gs://fd-io-exc-demo-n-in/input_demo_tailer/products_";
 DECLARE gs_url STRING;
 
-SET start_date = "2021-12-31";
-SET min_date = "2021-10-31";
+SET start_date = "2022-01-01";
+SET min_date = "2019-01-01";
 SET gs_url=CONCAT(gs_url_root,CAST(FORMAT_DATE("%Y%m%d", start_date) AS STRING),"_*.csv");
 
 EXPORT DATA OPTIONS(
@@ -20,10 +20,7 @@ SELECT
   vendor_number,
   vendor_name,
   item_number,
-  item_description,
-  pack,
-  bottle_volume_ml,
-  state_bottle_cost
+  item_description
 FROM
   bigquery-public-data.iowa_liquor_sales.sales
 WHERE date <= start_date
@@ -46,10 +43,7 @@ SELECT
   vendor_number,
   vendor_name,
   item_number,
-  item_description,
-  pack,
-  bottle_volume_ml,
-  state_bottle_cost
+  item_description
 FROM
   bigquery-public-data.iowa_liquor_sales.sales
 WHERE date = start_date;

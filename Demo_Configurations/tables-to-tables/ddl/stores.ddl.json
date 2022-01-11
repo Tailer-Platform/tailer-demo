@@ -3,7 +3,7 @@
 	"bq_table_schema": [
 		{
 			"name": "store_number",
-			"type": "STRING",
+			"type": "INT64",
 			"description": "Unique number assigned to the store who ordered the liquor."
 		},
 		{
@@ -23,7 +23,7 @@
 		},
 		{
 			"name": "zip_code",
-			"type": "STRING",
+			"type": "INT64",
 			"description": "Zip code where the store who ordered the liquor is located"
 		},
 		{
@@ -33,7 +33,7 @@
 		},
 		{
 			"name": "county_number",
-			"type": "STRING",
+			"type": "INT64",
 			"description": "Iowa county number for the county where store who ordered the liquor is located"
 		},
 		{

@@ -56,7 +56,8 @@
 					"table_name": "sales",
 					"short_description": "Daily Iowa Liquor Sales",
 					"filename_template": "sales_{{FD_DATE}}_{{FD_BLOB_12}}.gz",
-					"ddl_file": "ddl/sales.json"
+					"ddl_file": "ddl/sales.json",
+					"write_disposition": "WRITE_APPEND"
 				},
 				{
 					"table_name": "products",
