@@ -4,7 +4,7 @@
 	"short_description": "the context for any Tailer Demonstration",
 
 	"account": "000099",
-	"environment": " DEV",
+	"environment": "DEV",
 	"activated": true,
 	"archived": false,
 

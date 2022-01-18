@@ -12,13 +12,13 @@
 	"activated": true,
 	"archive": false,
 
-	"gcp_project": "{{dlk_gcp_project_id}}",
+	"gcp_project_id": "{{dlk_gcp_project_id}}",
 	"sql_file": "sql/iowa_liquor_export_aggr_sales.sql",
 
 	"gcs_dest_bucket": "{{dlk_bucket_in_n}}",
 	"gcs_dest_prefix": "{{dlk_folder_in_forecast_n}}",
 	"delete_dest_bucket_content": true,
-	"output_filename": "{{FD_DATE}}_exported_iowa_liquor_cluster_stores.csv",
+	"output_filename": "exported_iowa_liquor_aggr_sales.csv",
 	"field_delimiter": "|",
 	"compression": "NONE",
 	"print_header": true,
@@ -26,6 +26,6 @@
 	"copy_table": true,
 	"dest_gcp_project_id": "{{dlk_gcp_project_id}}",
 	"dest_gbq_dataset": "{{dlk_default_dataset_cluster}}",
-	"dest_gbq_table": "exported_iowa_liquor_cluster_stores",
+	"dest_gbq_table": "exported_iowa_liquor_aggr_sales",
 	"dest_gbq_table_suffix": "dag_execution_date"
 }

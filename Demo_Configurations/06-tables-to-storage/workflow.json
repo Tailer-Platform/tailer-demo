@@ -18,8 +18,8 @@
 		"gbq-to-gbq|000099_tailer_demo_build_store_clustering"
 	],
 
-	"target_dag": "table-to-storage",
-	"extra_parameters": {
-		"firestore_conf_doc_id": "000099_tailer_demo_iowa_liquor_export_cluster_stores"
+	"target_dag": {
+		"configuration_type": "table-to-storage",
+		"configuration_id": "000099_tailer_demo_iowa_liquor_export_cluster_stores"
 	}
 }
