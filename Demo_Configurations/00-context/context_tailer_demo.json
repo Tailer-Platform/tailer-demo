@@ -85,6 +85,12 @@
 			"type": "string",
 			"value": "archive_demo_tailer"
 		},
+		"dlk_folder_in_forecast_n": {
+			"resource": "value",
+			"description": "Exchance Bucket Folder for Archived Data In non sensitive",
+			"type": "string",
+			"value": "input_forecast_demo_tailer"
+		},
 		"credentials_fd-io-dlk_demo-n-in": {
 			"resource": "gcp_credentials_secret",
 			"description": "Credentials to read & write data in bucket fd-io-demo-n-in",
