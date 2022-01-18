@@ -6,11 +6,11 @@ FROM `dlk_demo_iowa_liquor_psa.stores_*`
 GROUP BY 1)
 SELECT
 DISTINCT
-CAST(t1.store_number as INT64) as store_number,
+CAST(SPLIT(t1.store_number,".")[offset(0)] as INT64) as store_number,
 t1.store_name,
 t1.address,
 t1.city,
-CAST(t1.zip_code as INT64) as zip_code,
+CAST(SPLIT(t1.zip_code,".")[offset(0)] as INT64) as zip_code,
 t1.store_location,
 CAST(t1.county_number as INT64) as county_number,
 t1.county

@@ -1,0 +1,51 @@
+{
+	"$schema": "http://jsonschema.tailer.ai/schema/table-to-table",
+	"version": "2",
+
+	"configuration_type": "table-to-table",
+	"configuration_id": "build_store_clustering",
+	"short_description": "Build Iowa Liquor Store Clusters with Tailer and Bigquery ML",
+
+	"account": "{{FD_ACCOUNT}}",
+	"environment": "{{FD_ENV}}",
+
+	"activated": true,
+	"archived": false,
+
+	"start_date": "2022, 1, 1",
+	"catchup": false,
+	"schedule_interval": "None",
+
+	"max_active_runs": 1,
+	"task_concurrency": 3,
+
+	"default_gcp_project_id": "{{dlk_gcp_project_id}}",
+	"default_bq_dataset": "{{dlk_default_dataset_cluster}}",
+	"default_write_disposition": "WRITE_TRUNCATE",
+
+	"task_dependencies": [
+		"iowa_liquor_create_model >> iowa_liquor_agg_store >> store_clustering"
+	],
+	"workflow": [
+		{
+			"task_type": "sql",
+			"id": "iowa_liquor_create_model",
+			"short_description": "Create the model for the cluster",
+			"sql_file": "sql/create_model_clustering_store_iowa_liquor.sql"
+		},
+		{
+			"task_type": "sql",
+			"id": "iowa_liquor_agg_store",
+			"short_description": "Aggregate Data for clustering  ",
+			"table_name": "iowa_liquor_agg_store",
+			"sql_file": "sql/iowa_liquor_agg_store.sql"
+		},
+		{
+			"task_type": "sql",
+			"id": "store_clustering",
+			"short_description": "Affect every stores to the good cluster",
+			"table_name": "store_clustering",
+			"sql_file": "sql/store_clustering.sql"
+		}
+	]
+}

@@ -25,7 +25,7 @@
 	"default_write_disposition": "WRITE_TRUNCATE",
 
 	"task_dependencies": [
-		"[create_stores_table,create_products_table] >> sales_tmp0_load_pda >> [stores_load_pda,products_load_pda,create_sales_details_table] >> sales_details_load_pda"
+		"[create_stores_table,create_products_table] >> sales_tmp0_load_pda >> [stores_load_pda,products_load_pda,create_sales_details_table] >> expects_sales_details >> sales_details_load_pda"
 	],
 
 	"workflow": [
@@ -66,14 +66,14 @@
 			"id": "stores_load_pda",
 			"short_description": "Load PDA Store Repository",
 			"table_name": "stores",
-			"sql_file": "sql/stores_load_pda.sql"
+			"sql_file": "sql/stores_load_pda_adv.sql"
 		},
 		{
 			"task_type": "sql",
 			"id": "products_load_pda",
 			"short_description": "Load PDA Product Repository",
 			"table_name": "products",
-			"sql_file": "sql/products_load_pda.sql"
+			"sql_file": "sql/products_load_pda_adv.sql"
 		},
 		{
 			"task_type": "sql",

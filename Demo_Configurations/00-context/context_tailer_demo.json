@@ -8,6 +8,8 @@
 	"activated": true,
 	"archived": false,
 
+	"gcp_project_id": "fd-io-jarvis-demo-dlk",
+
 	"parameters": {
 		"exc_gcp_project_id": {
 			"resource": "gcp_project_id",
@@ -15,6 +17,7 @@
 			"type": "string",
 			"value": "fd-io-jarvis-demo-exc"
 		},
+
 		"exc_bucket_in_n": {
 			"resource": "gcs_bucket",
 			"description": "Bucket for Data In non sensitive",
@@ -43,6 +46,19 @@
 				"enc_session_key": "784b299e4c2e647ee60f11fdb48ea8f389821287ebc4d40dd13179043b021fb38cd54dc53c73cc37c59fed4f7a44d3b07c6e874fa9175f997634c7af5789708a5b178a571948620c93c2a281ec6aafd743823835b447d8c853c6f638674329abde5767335d7c098d9ba30ce148fae595d2cda69470da965b98a62704392018a43cf5f2d9b9d724b58a0a4d58e3b33c9df85edad67aa8b7c4cd31ee5c04c3b6176857755239b4a245a453364e21192fff68ace97d84501eaac3cd26198b6e75992ae47e6e1ce5445a22374381c38a3bb09d515e8c160a2a525e07210e7f9d17fc33827aa493fa106969f54a796197a6e2867e82fdf72a4391c52c771920c839ab",
 				"tag": "f855cd875160c50e5bff3c8c49951227"
 			}
+		},
+
+		"exc_bucket_out_n": {
+			"resource": "gcs_bucket",
+			"description": "Bucket for Data Out non sensitive",
+			"type": "string",
+			"value": "fd-io-exc-demo-n-out"
+		},
+		"exc_folder_out_n": {
+			"resource": "value",
+			"description": "Exchange Bucket Folder for Data Out non sentitive",
+			"type": "string",
+			"value": "output_demo_tailer"
 		},
 
 		"dlk_gcp_project_id": {
@@ -82,15 +98,21 @@
 		},
 		"dlk_default_dataset_psa": {
 			"resource": "value",
-			"description": "Dlk Default Dataset",
+			"description": "Dlk Default PSA Dataset",
 			"type": "string",
 			"value": "dlk_demo_iowa_liquor_psa"
 		},
 		"dlk_default_dataset_pda": {
 			"resource": "value",
-			"description": "Dlk Default Dataset",
+			"description": "Dlk Default PDA Dataset",
 			"type": "string",
 			"value": "dlk_demo_iowa_liquor_pda"
+		},
+		"dlk_default_dataset_cluster": {
+			"resource": "value",
+			"description": "Dlk Default Cluster Dataset",
+			"type": "string",
+			"value": "dlk_demo_iowa_liquor_bda_cluster"
 		},
 		"credentials_dlk_bq": {
 			"resource": "gcp_credentials_secret",
