@@ -1,14 +1,23 @@
 {
+	"$schema": "http://jsonschema.tailer.ai/schema/workflow",
+	"version": "2",
+
 	"configuration_type": "workflow",
-	"configuration_id": "000099_iowa_liquor_workflow_export_cluster_stores",
-	"environment": "DEV",
-	"short_description": "Launch Iowa Liquor Jarvis Demo Export Cluster Stores Tables",
-	"account": "000099",
+	"configuration_id": "Trigger_TTS_iowa_liquor_export_cluster_stores",
+	"short_description": "Launch Iowa Liquor Tailer Demo Export Cluster Stores Table",
+
+	"account": "{{FD_ACOUNT}}",
+	"environment": "{{FD_ENV}}",
+
 	"activated": true,
 	"archived": false,
-	"authorized_job_ids": ["gbq-to-gbq|000099-build-iowa-liquor-model_DEV"],
+
+	"authorized_job_ids": [
+		"gbq-to-gbq|000099_tailer_demo_build_store_clustering"
+	],
+
 	"target_dag": "table-to-storage",
 	"extra_parameters": {
-		"firestore_conf_doc_id": "000099_iowa_liquor_export_cluster_stores"
+		"firestore_conf_doc_id": "000099_tailer_demo_iowa_liquor_export_cluster_stores"
 	}
 }
