@@ -25,7 +25,7 @@
 		"pip3 install numpy pandas scikit-learn xgboost google-cloud-bigquery google-cloud-storage pyarrow pandas-gbq",
 		"cp -f ./input/exported_iowa_liquor_aggr_sales-000000000000.csv /tmp/",
 		"python3 ./scripts/forecast_iowa_liquor_sales.py",
-		"cp -f /tmp/output_forecast_demo.csv ./output/"
+		"mv -f /tmp/output_forecast_demo.csv ./output/"
 	],
 
 	"vm_delete": true,
