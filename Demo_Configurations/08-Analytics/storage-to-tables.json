@@ -18,7 +18,7 @@
 		"type": "gcs",
 		"gcp_project_id": "{{dlk_gcp_project_id}}",
 		"gcs_source_bucket": "{{dlk_bucket_in_n}}",
-		"gcs_source_prefix": "{{dlk_folder_out_forecast_n}}",
+		"gcs_source_prefix": "{{dlk_folder_export_forecast_n}}",
 		"gcs_archive_prefix": "{{dlk_folder_archive_n}}",
 		"gcp_credentials_secret": "{{credentials_fd-io-dlk_demo-n-in}}"
 	},
