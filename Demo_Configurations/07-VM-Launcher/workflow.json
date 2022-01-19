@@ -4,7 +4,7 @@
 
 	"configuration_type": "workflow",
 	"configuration_id": "trigger_vml_iowa_liquor_sales_forecasting",
-	"short_description": "Launch Iowa Liquor Tailer Demo Export Cluster Stores Table",
+	"short_description": "Launch Iowa Liquor Tailer Demo Sales Forecasting with a VM Launcher",
 
 	"gcp_project_id": "{{dlk_gcp_project_id}}",
 
@@ -15,11 +15,11 @@
 	"archived": false,
 
 	"authorized_job_ids": [
-		"gbq-to-gbq|000099_tailer_demo_build_store_clustering"
+		"table-to-storage|table-to-storage|000099_tailer_demo_iowa_liquor_export_aggr_sales"
 	],
 
 	"target_dag": {
-		"configuration_type": "table-to-storage",
-		"configuration_id": "000099_tailer_demo_iowa_liquor_export_cluster_stores"
+		"configuration_type": "vm-launcher",
+		"configuration_id": "000099_tailer_demo_vm-launcher_sales_forecasting_DEV"
 	}
 }
