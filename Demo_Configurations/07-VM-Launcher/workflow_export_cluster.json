@@ -3,7 +3,7 @@
 	"version": "2",
 
 	"configuration_type": "workflow",
-	"configuration_id": "trigger_tts_iowa_liquor_export_cluster_stores",
+	"configuration_id": "trigger_vml_iowa_liquor_sales_forecasting",
 	"short_description": "Launch Iowa Liquor Tailer Demo Export Cluster Stores Table",
 
 	"gcp_project_id": "{{dlk_gcp_project_id}}",
