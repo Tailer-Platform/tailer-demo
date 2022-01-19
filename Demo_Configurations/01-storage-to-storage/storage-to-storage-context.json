@@ -3,7 +3,7 @@
 	"version": "2",
 
 	"configuration_type": "storage-to-storage",
-	"configuration_id": "{{FD_ACCOUNT}}-tailer-demo-storage-to-storage",
+	"configuration_id": "tailer-demo-storage-to-storage",
 	"short_description": "Copy Demo Inputs files from Exchange Bucket to Dlk Bucket",
 
 	"account": "{{FD_ACCOUNT}}",

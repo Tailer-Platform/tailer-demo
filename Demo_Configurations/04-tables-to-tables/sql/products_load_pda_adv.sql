@@ -25,4 +25,3 @@ vendor_number,
 vendor_name
 FROM all_products
 where rank = 1
---order by item_number

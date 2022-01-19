@@ -1,0 +1,49 @@
+{
+	"$schema": "http://jsonschema.tailer.ai/schema/storage-to-tables",
+	"version": "2",
+
+	"configuration_type": "storage-to-tables",
+	"configuration_id": "tailer-demo-analytics",
+	"account": "{{FD_ACCOUNT}}",
+	"environment": "{{FD_ENV}}",
+
+	"activated": true,
+	"archived": false,
+
+	"short_description": "This Job load iowa liquor sales forecast into Bigquery BDA",
+
+	"max_active_runs": 5,
+
+	"source": {
+		"type": "gcs",
+		"gcp_project_id": "{{dlk_gcp_project_id}}",
+		"gcs_source_bucket": "{{dlk_bucket_in_n}}",
+		"gcs_source_prefix": "{{dlk_folder_out_forecast_n}}",
+		"gcs_archive_prefix": "{{dlk_folder_archive_n}}",
+		"gcp_credentials_secret": "{{credentials_fd-io-dlk_demo-n-in}}"
+	},
+	"destinations": [
+		{
+			"type": "bigquery",
+			"gcp_project_id": "{{dlk_gcp_project_id}}",
+			"gbq_dataset": "{{dlk_default_dataset_cluster}}",
+
+			"source_format": "CSV",
+			"create_disposition": "CREATE_IF_NEEDED",
+			"write_disposition": "WRITE_TRUNCATE",
+			"skip_leading_rows": 1,
+			"field_delimiter": "|",
+			"quote_character": "\"",
+			"gcp_credentials_secret": "{{credentials_dlk_bq}}",
+
+			"tables": [
+				{
+					"table_name": "sales_forecast",
+					"short_description": "Iowa Liquor Sales Forecast",
+					"filename_template": "output_forecast_demo.csv",
+					"ddl_file": "ddl/sales_forecast.json"
+				}
+			]
+		}
+	]
+}

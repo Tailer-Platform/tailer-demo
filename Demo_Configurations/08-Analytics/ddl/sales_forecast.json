@@ -1,0 +1,54 @@
+{
+	"schema": [
+		{
+			"name": "num_ligne",
+			"type": "INT64",
+			"description": "Unique number of the output lines"
+		},
+		{
+			"name": "Week_date",
+			"type": "DATE",
+			"description": "Date of the for day of the forecasted week"
+		},
+		{
+			"name": "Total_Sales_dollars",
+			"type": "FLOAT",
+			"description": "Real Sales"
+		},
+		{
+			"name": "Total_Sales_Dollars_lag1",
+			"type": "FLOAT",
+			"description": "Total Sales Dollars lag1"
+		},
+		{
+			"name": "Total_Sales_Dollar_MA2_lag1",
+			"type": "FLOAT",
+			"description": "Total Sales Dollar MA2 lag1"
+		},
+		{
+			"name": "Total_Sales_Dollar_Difference_lag1",
+			"type": "FLOAT",
+			"description": "Total Sales Dollar Difference lag1"
+		},
+		{
+			"name": "Total_Sales_Dollar_Difference_in_Percent_Lag1",
+			"type": "FLOAT",
+			"description": "Totat Sales Dollar Difference in Percent Lag1"
+		},
+		{
+			"name": "month",
+			"type": "INT64",
+			"description": "Month Number"
+		},
+		{
+			"name": "week",
+			"type": "INT64",
+			"description": "Week Number"
+		},
+		{
+			"name": "Predicted_sales",
+			"type": "FLOAT",
+			"description": "Amount of the predicted forecasted sales"
+		}
+	]
+}
