@@ -89,5 +89,20 @@
 			"sql_file": "sql/expects_sales_details.sql",
 			"task_criticality": "warning"
 		}
-	]
+	],
+
+	"monitoring": {
+		"impact": 2,
+		"urgency": 2,
+		"alert_enabled": true,
+		"alert_environment": ["{{FD_ENV}}"],
+		"alert_info": "The Run Data Operation TTT to prepare PDA from PDA has failed",
+		"alert": {
+			"email": {
+				"email_from": "no-reply@tailer.ai",
+				"email_to": "romain.chaumais@fashiondata.io;julien.guarino@fashiondata.io",
+				"email_reply_to": "support@tailer.ai"
+			}
+		}
+	}
 }

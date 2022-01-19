@@ -140,9 +140,15 @@
 		},
 		"dlk_folder_out_forecast_n": {
 			"resource": "value",
-			"description": "Exchance Bucket Folder for Archived Data In non sensitive",
+			"description": "Exchance Bucket Folder for Archived Data Out non sensitive",
 			"type": "string",
 			"value": "forecast_demo_tailer/output"
+		},
+		"dlk_folder_export_forecast_n": {
+			"resource": "value",
+			"description": "Exchance Bucket Folder for Archived Data to export non sensitive",
+			"type": "string",
+			"value": "forecast_demo_tailer/export"
 		},
 		"credentials_vm_forecast": {
 			"resource": "gcp_credentials_secret",
