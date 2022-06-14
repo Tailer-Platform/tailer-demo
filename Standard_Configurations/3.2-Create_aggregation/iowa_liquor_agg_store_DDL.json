@@ -82,12 +82,12 @@
 			"description": "ratio of the sale for the cocktail category"
 		},
 		{
-			"name": "p_brandies",
+			"name": "p_brandy",
 			"type": "FLOAT",
 			"description": "ratio of the sale for the brandy category"
 		},
 		{
-			"name": "p_spirits",
+			"name": "p_spirit",
 			"type": "FLOAT",
 			"description": "ratio of the sale for the spirit category"
 		}

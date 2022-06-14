@@ -27,8 +27,8 @@ with tmp as (
 select
     store_number,
     store_name,
-    ROUND(SUM(sale_dollars),2) as sale_dollars,
-    ROUND(SUM(volume_sold_liters),2) as volume_sold_liters,
+    ROUND(SUM(sale_dollars), 2) as sale_dollars,
+    ROUND(SUM(volume_sold_liters), 2) as volume_sold_liters,
 
     ROUND(SUM(case when(quarter_date = 1) then sale_dollars else 0 end) / SUM(sale_dollars), 2) as sale_q1,
     ROUND(SUM(case when(quarter_date = 2) then sale_dollars else 0 end) / SUM(sale_dollars), 2) as sale_q2,

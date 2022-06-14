@@ -1,44 +1,44 @@
 {
 	"configuration_type": "table-to-table",
-	"configuration_id": "000099_iowa_liquor_prepare_pda",
-	"short_description": "Prepare PDA for Iowa Liquor Jarvis Demo",
-	"doc_md": "000099_iowa_liquor_prepare_pda.md",
+	"configuration_id": "000099_iowa_liquor_agg_store",
+	"short_description": "Create_aggregation",
+	"doc_md": "000099_iowa_liquor_agg_store.md",
 	"account": "000099",
 	"environment": "DEV",
 	"activated": true,
 	"archived": false,
 	"direct_execution": true,
-	"start_date": "2019, 1, 23",
+	"start_date": "2019, 1, 1",
 	"catchup": false,
 	"schedule_interval": "None",
 	"max_active_runs": 1,
 	"task_concurrency": 3,
 	"default_gcp_project_id": "fd-io-jarvis-demo-dlk",
-	"default_bq_dataset": "dlk_demo_iowa_liquor_pda",
+	"default_bq_dataset": "dlk_demo_iowa_liquor_bda_cluster",
 	"default_write_disposition": "WRITE_TRUNCATE",
 	"task_dependencies": [
-		"[create_stores_table,create_products_table] >> sales_tmp0_load_pda >> [stores_load_pda,products_load_pda,create_sales_details_table] >> sales_details_load_pda"
+		"create_table >> run_query"
 	],
 	"workflow": [
         {
-            "id": "create_tmp_table",
-            "short_description": "Create an empty temporary table with the proper name and descriptions.",
-            "doc_md": "000120_Load_PDA_ref_magasin.md",
+            "id": "create_table",
+            "short_description": "Create an empty table with the proper name and descriptions.",
+            "doc_md": "iowa_liquor_agg_store.md",
             "write_disposition": "WRITE_TRUNCATE",
             "task_type": "create_gbq_table",
             "force_delete": true,
-            "bq_table": "ref_magasin",
-            "bq_dataset": "tmp",
-            "ddl_file": "000120_Load_PDA_ref_magasin_DDL.json"
+            "bq_table": "iowa_liquor_agg_store_2019",
+            "bq_dataset": "dlk_demo_iowa_liquor_bda_cluster",
+            "ddl_file": "iowa_liquor_agg_store_DDL.json"
         },
         {
-            "id": "run_query_into_tmp",
+            "id": "run_query",
             "short_description": "Run the query and store the results in a tmp table (to avoid to erase the content of the former table in case of error with the query.",
             "write_disposition": "WRITE_APPEND",
-            "doc_md": "000120_Load_PDA_ref_magasin.md",
-            "sql_file": "000120_Load_PDA_ref_magasin.sql",
-            "table_name": "ref_magasin",
-            "bq_dataset": "tmp"
+            "doc_md": "iowa_liquor_agg_store.md",
+            "sql_file": "iowa_liquor_agg_store.sql",
+            "table_name": "iowa_liquor_agg_store_2019",
+            "bq_dataset": "dlk_demo_iowa_liquor_bda_cluster"
         }
 	]
 }
