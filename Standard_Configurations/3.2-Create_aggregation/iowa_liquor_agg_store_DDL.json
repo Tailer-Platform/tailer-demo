@@ -1,0 +1,96 @@
+{
+	"bq_table_description": "Iowa Liquor aggregation by store for 2019's sales",
+	"bq_table_clustering_fields": ["store_number"],
+	"bq_table_schema": [{
+			"name": "store_number",
+			"type": "STRING",
+			"description": "Unique number assigned to the store who ordered the liquor."
+		},
+		{
+			"name": "store_name",
+			"type": "STRING",
+			"description": "Name of store who ordered the liquor."
+		},
+		{
+			"name": "sale_dollars",
+			"type": "FLOAT",
+			"description": "sum of the 2019's sales for the store"
+		},
+		{
+			"name": "volume_sold_liters",
+			"type": "FLOAT",
+			"description": "sum of the volume sold in 2019 for the store in liters"
+		},
+		{
+			"name": "sale_q1",
+			"type": "FLOAT",
+			"description": "ratio of the sale for the first quarter of the 2019's year"
+		},
+		{
+			"name": "sale_q2",
+			"type": "FLOAT",
+			"description": "ratio of the sale for the second quarter of the 2019's year"
+		},
+		{
+			"name": "sale_q3",
+			"type": "FLOAT",
+			"description": "ratio of the sale for the third quarter of the 2019's year"
+		},
+		{
+			"name": "sale_q4",
+			"type": "FLOAT",
+			"description": "ratio of the sale for the fourth quarter of the 2019's year"
+		},
+		{
+			"name": "p_vodka",
+			"type": "FLOAT",
+			"description": "ratio of the sale for the vodka category"
+		},
+		{
+			"name": "p_whisky",
+			"type": "FLOAT",
+			"description": "ratio of the sale for the whisky category"
+		},
+		{
+			"name": "p_rum",
+			"type": "FLOAT",
+			"description": "ratio of the sale for the rum category"
+		},
+		{
+			"name": "p_liqueur",
+			"type": "FLOAT",
+			"description": "ratio of the sale for the liqueur category"
+		},
+		{
+			"name": "p_tequila",
+			"type": "FLOAT",
+			"description": "ratio of the sale for the tequila category"
+		},
+		{
+			"name": "p_schnapps",
+			"type": "FLOAT",
+			"description": "ratio of the sale for the schnapps category"
+		},
+		{
+			"name": "p_gin",
+			"type": "FLOAT",
+			"description": "ratio of the sale for the gin category"
+		},
+		{
+			"name": "p_cocktail",
+			"type": "FLOAT",
+			"description": "ratio of the sale for the cocktail category"
+		},
+		{
+			"name": "p_brandies",
+			"type": "FLOAT",
+			"description": "ratio of the sale for the brandy category"
+		},
+		{
+			"name": "p_spirits",
+			"type": "FLOAT",
+			"description": "ratio of the sale for the spirit category"
+		}
+	]
+
+}

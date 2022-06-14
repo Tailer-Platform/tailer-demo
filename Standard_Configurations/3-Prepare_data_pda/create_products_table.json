@@ -1,11 +1,7 @@
 {
 	"bq_table_description": "Iowa Liquor Products Repository",
+	"bq_table_clustering_fields": ["item_number"],
 	"bq_table_schema": [
-		{
-			"name": "category",
-			"type": "STRING",
-			"description": "Category code associated with the liquor"
-		},
 		{
 			"name": "category_name",
 			"type": "STRING",
@@ -46,6 +42,5 @@
 			"type": "FLOAT",
 			"description": "The amount the store paid for each bottle of liquor"
 		}
-	],
-	"bq_table_clustering_fields": ["item_number"]
+	]
 }
