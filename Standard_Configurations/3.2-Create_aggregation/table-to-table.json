@@ -33,9 +33,10 @@
         },
         {
             "id": "run_query",
-            "short_description": "Run the query and store the results in a tmp table (to avoid to erase the content of the former table in case of error with the query.",
+            "short_description": "Run the query and store the results in a table.",
+			"doc_md": "iowa_liquor_agg_store.md",
             "write_disposition": "WRITE_APPEND",
-            "doc_md": "iowa_liquor_agg_store.md",
+            "task_type": "sql",
             "sql_file": "iowa_liquor_agg_store.sql",
             "table_name": "iowa_liquor_agg_store_2019",
             "bq_dataset": "dlk_demo_iowa_liquor_bda_cluster"
