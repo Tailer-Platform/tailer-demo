@@ -1,0 +1,45 @@
+{
+	"configuration_type": "table-to-table",
+	"configuration_id": "000099_iowa_liquor_agg_store",
+	"short_description": "Create_aggregation",
+	"doc_md": "000099_iowa_liquor_agg_store.md",
+	"account": "000099",
+	"environment": "DEV",
+	"activated": true,
+	"archived": false,
+	"direct_execution": true,
+	"start_date": "2019, 1, 1",
+	"catchup": false,
+	"schedule_interval": "None",
+	"max_active_runs": 1,
+	"task_concurrency": 3,
+	"default_gcp_project_id": "fd-io-jarvis-demo-dlk",
+	"default_bq_dataset": "dlk_demo_iowa_liquor_bda_cluster",
+	"default_write_disposition": "WRITE_TRUNCATE",
+	"task_dependencies": [
+		"create_table >> run_query"
+	],
+	"workflow": [
+        {
+            "id": "create_table",
+            "short_description": "Create an empty table with the proper name and descriptions.",
+            "doc_md": "iowa_liquor_agg_store.md",
+            "write_disposition": "WRITE_TRUNCATE",
+            "task_type": "create_gbq_table",
+            "force_delete": true,
+            "bq_table": "iowa_liquor_agg_store_2019",
+            "bq_dataset": "dlk_demo_iowa_liquor_bda_cluster",
+            "ddl_file": "iowa_liquor_agg_store_DDL.json"
+        },
+        {
+            "id": "run_query",
+            "short_description": "Run the query and store the results in a table.",
+			"doc_md": "iowa_liquor_agg_store.md",
+            "write_disposition": "WRITE_APPEND",
+            "task_type": "sql",
+            "sql_file": "iowa_liquor_agg_store.sql",
+            "table_name": "iowa_liquor_agg_store_2019",
+            "bq_dataset": "dlk_demo_iowa_liquor_bda_cluster"
+        }
+	]
+}

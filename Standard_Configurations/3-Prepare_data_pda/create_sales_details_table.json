@@ -1,13 +1,14 @@
 {
 	"bq_table_description": "Iowa Liquor Sales Details",
-	"bq_table_schema": [
-		{
+	"bq_table_timepartitioning_field": "order_date",
+	"bq_table_clustering_fields": ["item_number", "vendor_number"],
+	"bq_table_schema": [{
 			"name": "invoice_and_item_number",
 			"type": "STRING",
 			"description": "Concatenated invoice and line number associated with the liquor order. This provides a unique identifier for the individual liquor products included in the store order."
 		},
 		{
-			"name": "date",
+			"name": "order_date",
 			"type": "DATE",
 			"description": "Date of order"
 		},
@@ -30,11 +31,6 @@
 			"name": "volume_sold_gallons",
 			"type": "FLOAT",
 			"description": "Total volume of liquor ordered in gallons. (i.e. (Bottle Volume (ml) x Bottles Sold)/3785.411784)"
-		},
-		{
-			"name": "category",
-			"type": "STRING",
-			"description": "Category code associated with the liquor"
 		},
 		{
 			"name": "category_name",
@@ -110,13 +106,7 @@
 			"name": "county_number",
 			"type": "STRING",
 			"description": "Iowa county number for the county where store who ordered the liquor is located"
-		},
-		{
-			"name": "county",
-			"type": "STRING",
-			"description": "County where the store who ordered the liquor is located"
 		}
-	],
-	"bq_table_timepartitioning_field": "date",
-	"bq_table_clustering_fields": ["item_number", "vendor_number"]
+	]
+
 }
