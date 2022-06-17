@@ -9,7 +9,7 @@
 	"activated": true,
 	"archived": false,
 
-	"max_active_runs": 5,
+	"max_active_runs": 10,
 
 	"filename_templates": [
 		{

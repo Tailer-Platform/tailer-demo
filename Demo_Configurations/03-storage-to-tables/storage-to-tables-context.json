@@ -13,7 +13,7 @@
 	"short_description": "This Job load iowa liquor files  into the Demo PSA",
 	"doc_md": "load_source_files_into_bigquery_psa.md",
 
-	"max_active_runs": 5,
+	"max_active_runs": 10,
 
 	"source": {
 		"type": "gcs",

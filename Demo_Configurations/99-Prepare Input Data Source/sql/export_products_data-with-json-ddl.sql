@@ -7,7 +7,7 @@ DECLARE gs_url_data STRING;
 
 SET (start_date, min_date, end_date) = (
 SELECT AS STRUCT 
-date_add(max(date), INTERVAL -5 DAY) as start_date,
+date_add(max(date), INTERVAL -3 DAY) as start_date,
 date_add(max(date), INTERVAL -3 YEAR) as min_date,
 max(date) as end_date,
 FROM `bigquery-public-data.iowa_liquor_sales.sales`

@@ -69,5 +69,17 @@
 				}
 			]
 		}
-	]
+	],
+	"monitoring": {
+		"impact": 2,
+		"urgency": 2,
+		"alert_enabled": true,
+		"alert_environment": ["PROD", "DEV"],
+		"alert_info": "Put here information about the alert",
+		"alert": {
+			"email": {
+				"email_to": "romain.chaumais@fashiondata.io"
+			}
+		}
+	}
 }
